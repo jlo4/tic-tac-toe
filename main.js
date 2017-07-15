@@ -47,7 +47,12 @@ $(document).ready(function(){
             console.log("Position of $id = " + Game.possible.indexOf($id));
             Game.possible.splice(Game.possible.indexOf($id), 1);
             console.log("New possible array =" + Game.possible);
+            console.log("Player1 took: " + Player2.taken);
+            Player2.taken.sort();
+            console.log("Player1 sorted array: " + Player2.taken);
+            console.log(typeof Player2.taken);
             $(this).html(Player2.value);
+            winner2();
             changeTurns();
           } else {
             console.log("Something wrong");
@@ -58,6 +63,8 @@ $(document).ready(function(){
     Player1.turn = !(Player1.turn);
     Player2.turn = !(Player2.turn);
   }
+
+//Check if player 1 wins
 
   function checkBoard(){
     var arr = [1, 2, 3];
@@ -156,29 +163,152 @@ $(document).ready(function(){
     return true;
   }
 
+//Check if player 2 wins
+
+  function check2Board(){
+    var arr = [1, 2, 3];
+    if(Player2.taken.length !== arr.length){
+        return false;
+    } for(var i = 0; i < Player2.taken.length; i++){
+        if(Player2.taken[i] !== arr[i]){
+          return false;
+        }
+    }
+    return true;
+  }
+
+
+  function check2Board2(){
+    var arr = [4, 5, 6];
+    if(Player2.taken.length !== arr.length){
+        return false;
+    } for(var i = 0; i < Player2.taken.length; i++){
+        if(Player2.taken[i] !== arr[i]){
+          return false;
+        }
+    }
+    return true;
+  }
+
+  function check2Board3(){
+    var arr = [7, 8, 9];
+    if(Player2.taken.length !== arr.length){
+        return false;
+    } for(var i = 0; i < Player2.taken.length; i++){
+        if(Player2.taken[i] !== arr[i]){
+          return false;
+        }
+    }
+    return true;
+  }
+
+  function check2Board4(){
+    var arr = [1, 4, 7];
+    if(Player2.taken.length !== arr.length){
+        return false;
+    } for(var i = 0; i < Player2.taken.length; i++){
+        if(Player2.taken[i] !== arr[i]){
+          return false;
+        }
+    }
+    return true;
+  }
+
+  function check2Board5(){
+    var arr = [2, 5, 8];
+    if(Player2.taken.length !== arr.length){
+        return false;
+    } for(var i = 0; i < Player2.taken.length; i++){
+        if(Player2.taken[i] !== arr[i]){
+          return false;
+        }
+    }
+    return true;
+  }
+
+  function check2Board6(){
+    var arr = [3, 6, 9];
+    if(Player2.taken.length !== arr.length){
+        return false;
+    } for(var i = 0; i < Player2.taken.length; i++){
+        if(Player2.taken[i] !== arr[i]){
+          return false;
+        }
+    }
+    return true;
+  }
+
+  function check2Board7(){
+    var arr = [3, 5, 7];
+    if(Player2.taken.length !== arr.length){
+        return false;
+    } for(var i = 0; i < Player2.taken.length; i++){
+        if(Player2.taken[i] !== arr[i]){
+          return false;
+        }
+    }
+    return true;
+  }
+
+  function check2Board8(){
+    var arr = [1, 5, 9];
+    if(Player2.taken.length !== arr.length){
+        return false;
+    } for(var i = 0; i < Player2.taken.length; i++){
+        if(Player2.taken[i] !== arr[i]){
+          return false;
+        }
+    }
+    return true;
+  }
+
+//call functions to check if player 1 wins
 
   function winner(){
     if(checkBoard()){
-      console.log("Player 1 wins!");
+      console.log("Player 1 123!");
     } else if(checkBoard2()){
-      console.log("PLayer wins 456");
+      console.log("PLayer 1 wins 456");
     } else if(checkBoard3()){
-      console.log("PLayer wins 456");
+      console.log("PLayer 1 wins 789");
     } else if(checkBoard4()){
-      console.log("PLayer wins 456");
+      console.log("PLayer 1 wins 147");
     } else if(checkBoard5()){
-      console.log("PLayer wins 456");
+      console.log("PLayer 1 wins 258");
     } else if(checkBoard6()){
-      console.log("PLayer wins 456");
+      console.log("PLayer 1 wins 369");
     } else if(checkBoard7()){
-      console.log("PLayer wins 456");
+      console.log("PLayer 1 wins 357");
     } else if(checkBoard8()){
-      console.log("PLayer wins 456");
+      console.log("PLayer 1 wins 159");
     } else {
       console.log("no winner yet");
     }
   }
 
+//call functions to check if player 2 wins
+
+function winner2(){
+  if(check2Board()){
+    console.log("Player 2 wins 123!");
+  } else if(check2Board2()){
+    console.log("PLayer 2 wins 456");
+  } else if(check2Board3()){
+    console.log("PLayer 2 wins 789");
+  } else if(check2Board4()){
+    console.log("PLayer 2 wins 147");
+  } else if(check2Board5()){
+    console.log("PLayer 2 wins 258");
+  } else if(check2Board6()){
+    console.log("PLayer 2 wins 369");
+  } else if(check2Board7()){
+    console.log("PLayer 2 wins 357");
+  } else if(check2Board8()){
+    console.log("PLayer 2 wins 159");
+  } else {
+    console.log("no winner yet");
+  }
+}
 
   // var checkBoard = function(array) {
   //   array.forEach(function(el){
