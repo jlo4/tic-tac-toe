@@ -84,24 +84,31 @@ $(document).ready(function(){
         console.log("Player 1 123!");
       } else if(checkBoard2()){
         $("#message").append('<p>Player 1 wins 456!</p>');
+        GameEnd.state = true;
         console.log("PLayer 1 wins 456");
       } else if(checkBoard3()){
         $("#message").append('<p>Player 1 wins 789!</p>');
+        GameEnd.state = true;
         console.log("PLayer 1 wins 789");
       } else if(checkBoard4()){
         $("#message").append('<p>Player 1 wins 147!</p>');
+        GameEnd.state = true;
         console.log("PLayer 1 wins 147");
       } else if(checkBoard5()){
         $("#message").append('<p>Player 1 wins 258!</p>');
+        GameEnd.state = true;
         console.log("PLayer 1 wins 258");
       } else if(checkBoard6()){
         $("#message").append('<p>Player 1 wins 369!</p>');
+        GameEnd.state = true;
         console.log("PLayer 1 wins 369");
       } else if(checkBoard7()){
         $("#message").append('<p>Player 1 wins 357!</p>');
+        GameEnd.state = true;
         console.log("PLayer 1 wins 357");
       } else if(checkBoard8()){
         $("#message").append('<p>Player 1 wins 159!</p>');
+        GameEnd.state = true;
         console.log("PLayer 1 wins 159");
       } else {
         $("#message").empty().append('<p>Player 2, choose a square!</p>');
@@ -114,27 +121,35 @@ $(document).ready(function(){
   function winner2(){
     if(check2Board()){
       $("#message").empty().append('<p>Player 2 wins 123!</p>');
+      GameEnd.state = true;
       console.log("Player 2 wins 123!");
     } else if(check2Board2()){
       $("#message").append('<p>Player 2 wins 123!</p>');
+      GameEnd.state = true;
       console.log("PLayer 2 wins 456");
     } else if(check2Board3()){
       $("#message").append('<p>Player 2 wins 123!</p>');
+      GameEnd.state = true;
       console.log("PLayer 2 wins 789");
     } else if(check2Board4()){
       $("#message").append('<p>Player 2 wins 123!</p>');
+      GameEnd.state = true;
       console.log("PLayer 2 wins 147");
     } else if(check2Board5()){
       $("#message").append('<p>Player 2 wins 123!</p>');
+      GameEnd.state = true;
       console.log("PLayer 2 wins 258");
     } else if(check2Board6()){
       $("#message").append('<p>Player 2 wins 123!</p>');
+      GameEnd.state = true;
       console.log("PLayer 2 wins 369");
     } else if(check2Board7()){
       $("#message").append('<p>Player 2 wins 123!</p>');
+      GameEnd.state = true;
       console.log("PLayer 2 wins 357");
     } else if(check2Board8()){
       $("#message").append('<p>Player 2 wins 123!</p>');
+      GameEnd.state = true;
       console.log("PLayer 2 wins 159");
     } else {
       $("#message").empty().append('<p>Player 1, choose a square!</p>');
