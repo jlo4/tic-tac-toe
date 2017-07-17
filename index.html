@@ -5,28 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <h1>Tic Tac Toe</h1>
-  <table>
-    <tr>
-      <td id="1"></td>
-      <td id="2" class="vertical"></td>
-      <td id="3"></td>
-    </tr>
-    <tr>
-      <td id="4" class="horizontal"></td>
-      <td id="5" class="horizontal vertical"></td>
-      <td id="6" class="horizontal"></td>
-    </tr>
-    <tr>
-      <td id="7"></td>
-      <td id="8" class="vertical"></td>
-      <td id="9"></td>
-    </tr>
-  </table>
+    <div id="message">
+      <p>Player 1, choose a square!</p>
+    </div>
+      <div class="row">
+        <div class="col-lg-4 center-block">
+          <button class="btn btn-primary center-block">Clear Board</button>
+        </div>
+      </div>
+    <table>
+      <tr>
+        <td id="1"></td>
+        <td id="2" class="vertical"></td>
+        <td id="3"></td>
+      </tr>
+      <tr>
+        <td id="4" class="horizontal"></td>
+        <td id="5" class="horizontal vertical"></td>
+        <td id="6" class="horizontal"></td>
+      </tr>
+      <tr>
+        <td id="7"></td>
+        <td id="8" class="vertical"></td>
+        <td id="9"></td>
+      </tr>
+    </table>
 
   <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"

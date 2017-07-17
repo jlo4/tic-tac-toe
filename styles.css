@@ -2,12 +2,26 @@ h1 {
   text-align: center;
 }
 
+#message {
+  margin: 0 auto;
+  text-align: center;
+}
+
+button {
+  margin: 25px 0;
+}
+.center-block {
+  float: none;
+}
+
 table {
-  margin: auto;
+  margin: 50px auto;
 }
 
 td {
+  font-size: 32px;
   height: 100px;
+  text-align: center;
   width: 100px;
 }
 
@@ -19,4 +33,12 @@ td {
 .horizontal {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
+}
+
+.colorX {
+  background: green;
+}
+
+.colorY {
+  background: blue;
 }

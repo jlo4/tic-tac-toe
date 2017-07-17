@@ -17,46 +17,53 @@ $(document).ready(function(){
   possible:  [1, 2, 3, 4, 5, 6, 7, 8, 9]
   }
 
-
-
+      $(".btn").on("click", function(){
+        Player1.turn = true;
+        Player1.taken = [];
+        Player2.turn = false;
+        Player2.taken = [];
+        Game.possible = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        $("#1").empty().removeClass("colorX colorY");
+        $("#2").empty().removeClass("colorX colorY");
+        $("#3").empty().removeClass("colorX colorY");
+        $("#4").empty().removeClass("colorX colorY");
+        $("#5").empty().removeClass("colorX colorY");
+        $("#6").empty().removeClass("colorX colorY");
+        $("#7").empty().removeClass("colorX colorY");
+        $("#8").empty().removeClass("colorX colorY");
+        $("#9").empty().removeClass("colorX colorY");
+        $("#message").empty().append('<p>Player 1, choose a square!</p>');
+      });
 
       $("td").on("click", function(){
         // alert($(this).attr("id"));
+        if(GameEnd.state === false){
         var $id = $(this).attr("id");
           $id = Number($id);
           if((Player1.turn === true) && $.inArray($id, Game.possible) > -1){
+            $("#message").empty();
             Player1.taken.push($id);
-            console.log(typeof $id);
-            // $id = $id - 1
-            // Game.possible.splice($id, 1);
-            console.log("Position of $id = " + Game.possible.indexOf($id));
             Game.possible.splice(Game.possible.indexOf($id), 1);
-            console.log("New possible array =" + Game.possible);
-
-            // console.log("Possible moves= " + Game.possible);
-            console.log("Player1 took: " + Player1.taken);
             Player1.taken.sort();
-            console.log("Player1 sorted array: " + Player1.taken);
-            console.log(typeof Player1.taken);
-            // console.log("Player1 clicked on: " + $id);
+            ($(this).addClass("colorX"));
             ($(this).html(Player1.value));
             winner();
             changeTurns();
           } else if ((Player2.turn === true) && $.inArray($id, Game.possible) > -1) {
+            $("#message").empty();
             Player2.taken.push($id);
-            console.log("Position of $id = " + Game.possible.indexOf($id));
             Game.possible.splice(Game.possible.indexOf($id), 1);
-            console.log("New possible array =" + Game.possible);
-            console.log("Player2 took: " + Player2.taken);
             Player2.taken.sort();
-            console.log("Player2 sorted array: " + Player2.taken);
-            console.log(typeof Player2.taken);
-            $(this).html(Player2.value);
+            ($(this).addClass("colorY"));
+            ($(this).html(Player2.value));
             winner2();
             changeTurns();
           } else {
-            console.log("Something wrong");
+            $("#message").empty().append('<p>Can\'t click there!</p>');
           }
+        } else {
+          $("#message").empty().append('<p>The game is over. Restart the game to play again!</p>');
+        }
       });
 
   function changeTurns(){
@@ -64,34 +71,40 @@ $(document).ready(function(){
     Player2.turn = !(Player2.turn);
   }
 
+  var GameEnd = {
+    state: false
+  }
+
   //call functions to check if player 1 wins
 
     function winner(){
       if(checkBoard()){
-        alert("Player 1 wins!");
+        $("#message").append('<p>Player 1 wins 123!</p>');
+        GameEnd.state = true;
         console.log("Player 1 123!");
       } else if(checkBoard2()){
-        alert("Player 1 wins!");
+        $("#message").append('<p>Player 1 wins 456!</p>');
         console.log("PLayer 1 wins 456");
       } else if(checkBoard3()){
-        alert("Player 1 wins!");
+        $("#message").append('<p>Player 1 wins 789!</p>');
         console.log("PLayer 1 wins 789");
       } else if(checkBoard4()){
-        alert("Player 1 wins!");
+        $("#message").append('<p>Player 1 wins 147!</p>');
         console.log("PLayer 1 wins 147");
       } else if(checkBoard5()){
-        alert("Player 1 wins!");
+        $("#message").append('<p>Player 1 wins 258!</p>');
         console.log("PLayer 1 wins 258");
       } else if(checkBoard6()){
-        alert("Player 1 wins!");
+        $("#message").append('<p>Player 1 wins 369!</p>');
         console.log("PLayer 1 wins 369");
       } else if(checkBoard7()){
-        alert("Player 1 wins!");
+        $("#message").append('<p>Player 1 wins 357!</p>');
         console.log("PLayer 1 wins 357");
       } else if(checkBoard8()){
-        alert("Player 1 wins!");
+        $("#message").append('<p>Player 1 wins 159!</p>');
         console.log("PLayer 1 wins 159");
       } else {
+        $("#message").empty().append('<p>Player 2, choose a square!</p>');
         console.log("no winner yet");
       }
     }
@@ -100,23 +113,31 @@ $(document).ready(function(){
 
   function winner2(){
     if(check2Board()){
+      $("#message").empty().append('<p>Player 2 wins 123!</p>');
       console.log("Player 2 wins 123!");
     } else if(check2Board2()){
+      $("#message").append('<p>Player 2 wins 123!</p>');
       console.log("PLayer 2 wins 456");
     } else if(check2Board3()){
+      $("#message").append('<p>Player 2 wins 123!</p>');
       console.log("PLayer 2 wins 789");
     } else if(check2Board4()){
+      $("#message").append('<p>Player 2 wins 123!</p>');
       console.log("PLayer 2 wins 147");
     } else if(check2Board5()){
+      $("#message").append('<p>Player 2 wins 123!</p>');
       console.log("PLayer 2 wins 258");
     } else if(check2Board6()){
+      $("#message").append('<p>Player 2 wins 123!</p>');
       console.log("PLayer 2 wins 369");
     } else if(check2Board7()){
+      $("#message").append('<p>Player 2 wins 123!</p>');
       console.log("PLayer 2 wins 357");
     } else if(check2Board8()){
+      $("#message").append('<p>Player 2 wins 123!</p>');
       console.log("PLayer 2 wins 159");
     } else {
-      console.log("no winner yet");
+      $("#message").empty().append('<p>Player 1, choose a square!</p>');
     }
   }
 
