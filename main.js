@@ -18,6 +18,7 @@ $(document).ready(function(){
   }
 
       $(".btn").on("click", function(){
+        GameEnd.state = false;
         Player1.turn = true;
         Player1.taken = [];
         Player2.turn = false;
@@ -228,7 +229,7 @@ $(document).ready(function(){
 //Check if player 2 wins
 
   function check2Board(){
-    if(Player1.taken.includes(1) && Player1.taken.includes(2) && Player1.taken.includes(3)){
+    if(Player2.taken.includes(1) && Player2.taken.includes(2) && Player2.taken.includes(3)){
       return true;
     }else {
       return false;
@@ -237,7 +238,7 @@ $(document).ready(function(){
 
 
   function check2Board2(){
-    if(Player1.taken.includes(4) && Player1.taken.includes(5) && Player1.taken.includes(6)){
+    if(Player2.taken.includes(4) && Player2.taken.includes(5) && Player2.taken.includes(6)){
       return true;
     }else {
       return false;
@@ -245,7 +246,7 @@ $(document).ready(function(){
   }
 
   function check2Board3(){
-    if(Player1.taken.includes(7) && Player1.taken.includes(8) && Player1.taken.includes(9)){
+    if(Player2.taken.includes(7) && Player2.taken.includes(8) && Player2.taken.includes(9)){
       return true;
     }else {
       return false;
@@ -253,7 +254,7 @@ $(document).ready(function(){
   }
 
   function check2Board4(){
-    if(Player1.taken.includes(1) && Player1.taken.includes(4) && Player1.taken.includes(7)){
+    if(Player2.taken.includes(1) && Player2.taken.includes(4) && Player2.taken.includes(7)){
       return true;
     }else {
       return false;
@@ -261,7 +262,7 @@ $(document).ready(function(){
   }
 
   function check2Board5(){
-    if(Player1.taken.includes(2) && Player1.taken.includes(5) && Player1.taken.includes(8)){
+    if(Player2.taken.includes(2) && Player2.taken.includes(5) && Player2.taken.includes(8)){
       return true;
     }else {
       return false;
@@ -269,7 +270,7 @@ $(document).ready(function(){
   }
 
   function check2Board6(){
-    if(Player1.taken.includes(3) && Player1.taken.includes(6) && Player1.taken.includes(9)){
+    if(Player2.taken.includes(3) && Player2.taken.includes(6) && Player2.taken.includes(9)){
       return true;
     }else {
       return false;
@@ -277,7 +278,7 @@ $(document).ready(function(){
   }
 
   function check2Board7(){
-    if(Player1.taken.includes(3) && Player1.taken.includes(5) && Player1.taken.includes(7)){
+    if(Player2.taken.includes(3) && Player2.taken.includes(5) && Player2.taken.includes(7)){
       return true;
     }else {
       return false;
@@ -285,7 +286,7 @@ $(document).ready(function(){
   }
 
   function check2Board8(){
-    if(Player1.taken.includes(1) && Player1.taken.includes(5) && Player1.taken.includes(9)){
+    if(Player2.taken.includes(1) && Player2.taken.includes(5) && Player2.taken.includes(9)){
       return true;
     }else {
       return false;
