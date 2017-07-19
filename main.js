@@ -49,6 +49,7 @@ $(document).ready(function(){
             ($(this).addClass("colorX"));
             ($(this).html(Player1.value));
             winner();
+            FullBoard.check();
             changeTurns();
           } else if ((Player2.turn === true) && $.inArray($id, Game.possible) > -1) {
             $("#message").empty();
@@ -58,6 +59,7 @@ $(document).ready(function(){
             ($(this).addClass("colorY"));
             ($(this).html(Player2.value));
             winner2();
+            FullBoard.check();
             changeTurns();
           } else {
             $("#message").empty().append('<p>Can\'t click there!</p>');
@@ -75,6 +77,14 @@ $(document).ready(function(){
   var GameEnd = {
     state: false
   }
+
+  var FullBoard = {
+    check: function (){
+      if(Game.possible[0] == null){
+        $("#message").empty().append('<p>There are no moves left. The game has ended in a tie! Restart the game to play again!</p>');
+      }
+      }
+  };
 
   //call functions to check if player 1 wins
 
